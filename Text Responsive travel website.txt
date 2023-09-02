@@ -130,3 +130,4 @@ https://www.youtube.com/
 
 .footer__copy
 &#169; Copyright Bedimcode. All rights reserved
+
