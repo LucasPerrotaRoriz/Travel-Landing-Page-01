@@ -179,7 +179,7 @@ img {
   position: relative;
   font-family: var(--second-font);
   font-weight: var(--font-medium);
-  padding-block-end: .25rem;
+  padding-block-end: .5rem;
   color: var(--title-color);
 }
 
@@ -236,6 +236,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   height: 750px;
   object-fit: cover;
   object-position: center;
@@ -254,13 +255,17 @@ img {
 
 .home__container {
   position: relative;
-  text-align: center;
   padding-block-start: 4rem;
+  row-gap: 3rem;
+}
+
+.home__data {
+  text-align: center;
 }
 
 .home__subtitle {
   font-size: var(--h3-font-size);
-  margin-block-end: 1rem;
+  margin-block-end: .5rem;
 }
 
 .home__title {
@@ -269,21 +274,23 @@ img {
 }
 
 .home__description {
-  margin-block-end: 1.5rem;
-  color: #fff;  
+  margin-block-end: 2rem;
+  color: var(--title-color);  
 }
 
 .home__cards {
-  grid-template-columns: 250px;
+  grid-template-columns: 240px;
   justify-content: center;
-  row-gap: 1.5rem;
 }
 
 .home__card {
   position: relative;
   transition: all .4s;
-  cursor: pointer;
   overflow: hidden;
+}
+
+.home__card-img {
+  transition: all .4s;
 }
 
 .home__card-shadow {
@@ -305,10 +312,6 @@ img {
   z-index: 1;
 }
 
-.home__card-img {
-  overflow: hidden;
-  transition: all .4s;
-}
 
 .home__card:hover .home__card-img {
   transform: scale(1.2);
@@ -360,23 +363,90 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) {
-
+  .container {
+    margin-inline: 1rem;
+  }
 }
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-
+  .home__container {
+    grid-template-columns: 380px;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  
+  .home__cards {
+    grid-template-columns: repeat(2, 240px);
+  }
 }
 
 /* For large devices */
 @media screen and (min-width: 1023px) {
-  
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__menu {
+    padding-block: 0;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 4rem;
+  }
 }
 
 @media screen and (min-width: 1152px) {
-  
+  .container {
+    margin-inline: auto;
+  }
+
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .blur-header::after {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+
+  .home__container {
+    grid-template-columns: initial;
+    justify-content: initial;
+    row-gap: 4.5rem;
+    padding-block-start: 6.5rem;
+  }
+
+  .home__shadow {
+    height: 980px;
+  }
+
+  .home__data {
+    width: 480px;
+    text-align: initial;
+  }
+
+  .home__subtitle {
+    font-size: var(--h2-font-size);
+  }
+
+  .home__cards {
+    grid-template-columns: repeat(4, 260px);
+  }
+
+  .button {
+    column-gap: 1rem;
+  }
+
+  .home__card-title {
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
 }
