@@ -476,7 +476,62 @@ img {
 }
 
 /*=============== JOIN ===============*/
+.join__data .section__title {
+  margin-block: 0;
+}
 
+.join__container {
+  row-gap: 3rem;
+  padding-block-end: 2.5rem;
+}
+
+.join__data {
+  text-align: center;
+}
+
+.join__description {
+  margin-block-end: 2rem;
+}
+
+.join__newsletter {
+ display: grid; 
+ row-gap: 1rem;
+}
+
+.join__input {
+  padding: 1.25rem;
+  background-color: var(--container-color);
+}
+
+.join__button {
+  cursor: pointer;
+}
+
+.join__image {
+  position: relative;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.join__img {
+  width: 300px;
+  transition: all .4s;
+}
+
+.join__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+              hsla(0, 0%, 0%, 0) 50%,
+              hsl(0, 0%, 0%) 125%);
+}
+
+.join__image:hover .join__img {
+  transform: scale(1.2);
+}
 
 /*=============== FOOTER ===============*/
 
@@ -493,13 +548,18 @@ img {
   .container {
     margin-inline: 1rem;
   }
+
+  .join__newsletter {
+    grid-template-columns: 290px;
+  }
 }
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
   .home__container,
   .about__container,
-  .explore__content {
+  .explore__content,
+  .join__container {
     grid-template-columns: 380px;
     justify-content: center;
   }
@@ -507,11 +567,13 @@ img {
 
 @media screen and (min-width: 768px) {
   .home__cards,
-  .popular__container {
+  .popular__container,
+  .join__container {
     grid-template-columns: repeat(2, 240px);
   }
 
-  .about__container {
+  .about__container,
+  .join__container {
     grid-template-columns: repeat(2, 350px);
     column-gap: 2.5rem;
     align-items: center;
@@ -533,6 +595,10 @@ img {
 
   .explore__description {
     margin-block-end: .75rem;
+  }
+
+  .join__image {
+    order: -1;
   }
 }
 
@@ -646,5 +712,27 @@ img {
     justify-content: flex-end;
     align-self: flex-end;
     margin-block-end: 1.75rem;
+  }
+
+  .join__data,
+  .join__data, .section__title {
+    text-align: initial;
+  }
+
+  .join__container {
+    grid-template-columns: 460px 340px;
+    column-gap: 8rem;
+  }
+
+  .join__img {
+    width: 460px;
+  }
+
+  .join__data .section__title {
+    font-size: var(--h2-font-size);
+  }
+
+  .join__description {
+    margin-block-end: 3rem;
   }
 }
