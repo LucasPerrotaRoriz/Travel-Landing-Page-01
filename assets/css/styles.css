@@ -322,12 +322,15 @@ img {
   display: inline-flex;
   align-items: center;
   column-gap: .5rem;
-  margin-block: 1rem 3.5rem;
   padding: 1.25rem 1.5rem;
   background-color: rgba(255, 255, 255, .2);
   color: var(--title-color);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+}
+
+.home__button {
+  margin-block: 1rem 3.5rem;
 }
 
 .button i {
@@ -340,7 +343,43 @@ img {
 }
 
 /*=============== ABOUT ===============*/
+.about__container {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
 
+.about__data {
+  text-align: center;
+}
+
+.about__description {
+  margin-block-end: 1rem;
+}
+
+.about__image {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+}
+
+.about__img {
+  transition: all .4s;
+}
+
+.about__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+              hsla(0, 0%, 0%, 0) 50%,
+              hsl(0, 0%, 0%) 125%);
+}
+
+.about__image:hover .about__img {
+  transform: scale(1.2);
+}
 
 /*=============== POPULAR ===============*/
 
@@ -370,7 +409,8 @@ img {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-  .home__container {
+  .home__container,
+  .about__container {
     grid-template-columns: 380px;
     justify-content: center;
   }
@@ -380,6 +420,16 @@ img {
   .home__cards {
     grid-template-columns: repeat(2, 240px);
   }
+
+  .about__container {
+    grid-template-columns: repeat(2, 350px);
+    align-items: center;
+  }
+
+ .about__data,
+ .about__data .section__title {
+  text-align: initial;
+ }
 }
 
 /* For large devices */
