@@ -553,17 +553,24 @@ img {
 }
 
 .footer__info {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, max-content);
+  row-gap: 2.5rem;
+  column-gap: 3.5rem;
 }
 
 .footer__data-title {
   margin-block-end: .75rem;
 }
 
-.footer__link {
+.footer__data-link {
   display: inline-block;
   margin-block-end: .75rem;
   color: var(--text-color-light);
+  transition: all .4s;
+}
+
+.footer__data-link:hover {
+  color: var(--title-color);
 }
 
 .footer__group {
@@ -644,7 +651,7 @@ img {
   }
 
   .footer__info {
-    grid-template-columns: 1fr;
+    grid-template-columns: max-content;
   }
 }
 
@@ -659,13 +666,12 @@ img {
   }
 
   .footer__info {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, max-content);
   }
 }
 
 @media screen and (min-width: 768px) {
   .home__cards,
-  .popular__container,
   .join__container {
     grid-template-columns: repeat(2, 240px);
   }
@@ -683,7 +689,7 @@ img {
   }
 
   .popular__container {
-    grid-template-columns: repeat(3, 240px);
+    grid-template-columns: repeat(2, 240px);
     column-gap: 2.5rem;
   }
 
@@ -700,8 +706,8 @@ img {
   }
 
   .footer__content {
-    grid-template-columns: 200px 1fr;
-    column-gap: 7rem;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
   }
 
   .footer__group {
@@ -731,8 +737,14 @@ img {
     column-gap: 4rem;
   }
 
+  .popular__container {
+    grid-template-columns: repeat(3, 240px);
+    column-gap: 2.5rem;
+  }
+
   .footer__info {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 4.5rem;
   }
 }
 
@@ -832,7 +844,7 @@ img {
   }
 
   .join__data,
-  .join__data, .section__title {
+  .join__data .section__title {
     text-align: initial;
   }
 
@@ -851,5 +863,26 @@ img {
 
   .join__description {
     margin-block-end: 3rem;
+  }
+
+  .footer__data {
+    column-gap: 3.5rem;
+  }
+
+  .footer__data-title {
+    margin-block-end: 1.5rem;
+  }
+
+  .footer__social {
+    column-gap: 2rem;
+  }
+
+  .footer__social-link {
+    font-size: 1.5rem;
+  }
+
+  .scroll__up {
+    bottom: 1rem;
+    right: 2rem;
   }
 }
